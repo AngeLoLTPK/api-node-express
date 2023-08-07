@@ -1,10 +1,11 @@
 {
   "name": "api-node-express",
   "version": "1.0.0",
-  "description": "api node express framework",
+  "description": "api node com framework express",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
