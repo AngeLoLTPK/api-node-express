@@ -1,0 +1,25 @@
+{
+  "name": "api-node-express",
+  "version": "1.0.0",
+  "description": "api node express framework",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeLoLTPK/api-node-espress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngeLoLTPK/api-node-espress/issues"
+  },
+  "homepage": "https://github.com/AngeLoLTPK/api-node-espress#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
