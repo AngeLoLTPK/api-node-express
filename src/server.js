@@ -1,8 +1,8 @@
 // const expresss = require("express")
 // IMPORT THE ROUTES PLEASE
 import express from 'express';
-import userRouter from './Routes/userRouter.js'
-import productRouter from './Routes/productRouter.js'
+import userRouter from './routes/userRouter.js'
+import productRouter from './routes/productRouter.js'
 
 const api = express();
 
