@@ -1,11 +1,20 @@
 // const expresss = require("express")
 // IMPORT THE ROUTES PLEASE
 import express from 'express';
-import userRouter from './routers/userRouter.js'
-import productRouter from './routers/productRouter.js'
+import bodyParser from 'body-parser';
+
+import userRouter from './routers/userRouter.js';
+import productRouter from './routers/productRouter.js';
 import authRouter from './routers/authRouter.js';
+import { PORT } from './config.js';
 
 const api = express();
+
+
+// middleware
+// converte toda requesição com body json para objeto no req.body
+api.use(bodyParser.json());
+
 
 api.get('/', (req, res) => {
     res.json({ message: 'welcome to our API' });
@@ -19,6 +28,7 @@ api.use('/product', productRouter);
 
 api.use('/auth', authRouter);
 
-api.listen(3000, () => {
-    console.log("Server Working on web; https://api-node-express.onrender.com")
+api.listen(PORT, () => {
+   console.log(`Server working on the door ${PORT}`);
+    // console.log("Server Working on web; https://api-node-express.onrender.com")
 });
