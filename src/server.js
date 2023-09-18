@@ -1,6 +1,11 @@
 // const expresss = require("express")
 // IMPORT THE ROUTES PLEASE
+
+// in the package.json insert the   "type": "module" bellow main
+
 import express from 'express';
+
+//ele é um midlleware
 import bodyParser from 'body-parser';
 
 import userRouter from './routers/userRouter.js';
@@ -10,8 +15,7 @@ import { PORT } from './config.js';
 
 const api = express();
 
-
-// middleware
+//ele é um midlleware
 // converte toda requesição com body json para objeto no req.body
 api.use(bodyParser.json());
 
