@@ -1,7 +1,7 @@
 import pool from '../database/db.js';
 
 const getById = async(id) => {
-    return await pool.query("Select name, email from users where id = ?", [id]);
+    return await pool.query("Select name, email, photo from users where id = ?", [id]);
 };
 
 const getAll = async () => {
@@ -9,12 +9,12 @@ const getAll = async () => {
 }
 
 
-const postByUser = async(name, email, pass) => {
-    return await pool.query("insert into users (name, email, pass) values (?, ?, ?);", [name, email, pass]);
+const postByUser = async(name, email, pass, photo) => {
+    return await pool.query("insert into users (name, email, pass, photo) values (?, ?, ?, ?);", [name, email, pass, photo]);
 };
 
-const updateByUser = async(name, email, pass, id) => {
-    return await pool.query("update users set name=?, email=?, pass=? where id = ?", [name, email, pass, id]);
+const updateByUser = async(name, email, pass, photo, id) => {
+    return await pool.query("update users set name=?, email=?, pass=?, photo=? where id = ?", [name, email, pass, photo, id]);
 }
 
 const deleteByUser = async(id) => {

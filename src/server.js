@@ -5,6 +5,9 @@
 
 import express from 'express';
 
+// outro middleware para liberar o front usar a api
+import cors from "cors"
+
 //ele é um midlleware
 import bodyParser from 'body-parser';
 
@@ -13,10 +16,12 @@ import productRouter from './routers/productRouter.js';
 import authRouter from './routers/authRouter.js';
 import { PORT } from './config.js';
 
+
 const api = express();
 
 //ele é um midlleware
 // converte toda requesição com body json para objeto no req.body
+api.use(cors())
 api.use(bodyParser.json());
 
 
@@ -31,6 +36,8 @@ api.use('/user', userRouter);
 api.use('/product', productRouter);
 
 api.use('/auth', authRouter);
+
+
 
 api.listen(PORT, () => {
    console.log(`Server working on the door ${PORT}`);

@@ -3,7 +3,7 @@ import user from '../../models/userModel.js'
 const postUser = async (req, res) => {
     try {
         const userData = req.body;
-        const [result] = await user.postByUser(userData.name, userData.email, userData.pass)
+        const [result] = await user.postByUser(userData.name, userData.email, userData.pass, userData.photo)
         if(result.affectedRows === 1) {
             res.json({
                 success: "Usuário inserido com Sucesso!",
