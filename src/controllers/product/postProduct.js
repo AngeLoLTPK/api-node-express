@@ -7,7 +7,7 @@ const postProduct = async (req, res) => {
         if(result.affectedRows === 1) {
             res.json({
                 success: "Produto inserido com Sucesso!",
-                user: {
+                Product: {
                     id: result.insertId,
                     ...productData
                    // name: userData.name,

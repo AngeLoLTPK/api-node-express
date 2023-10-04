@@ -8,7 +8,7 @@ const updateProduct = async (req, res) => {
         if(result.affectedRows === 1) {
             res.json({
                 success: "Dados do produto alterados com Sucesso!",
-                user: {
+                Product: {
                     ...productData
                    // name: productData.name,
                    // email: productData.email,
