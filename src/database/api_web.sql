@@ -23,6 +23,13 @@ create table products (
     price				varchar(200)
 );
 
+create table sessions (
+	id			int					auto_increment			primary key,
+    token		varchar(300)		unique,
+    id_users	int,
+	constraint 	fk_id_users			foreign key(id)			references users(id)
+);
+
 insert into users (name, email, pass, photo) values ('Angelo', 'angelogm2005@gmail.com', 123, "https://avatars.githubusercontent.com/u/130395807?v=4");
 
 insert into users (name, email, pass, photo) values ('Luiz', 'luizIFSP@gmail.com', 143, "https://avatars.githubusercontent.com/u/127341699?v=4");

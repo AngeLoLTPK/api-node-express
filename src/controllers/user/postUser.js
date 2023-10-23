@@ -1,4 +1,5 @@
 import user from '../../models/userModel.js'
+import bcrypt from 'bcrypt'
 
 const postUser = async (req, res) => {
     try {

@@ -7,6 +7,6 @@ const authRouter = express.Router();
 
 authRouter.post("/login", loginPost);
 
-authRouter.post('/logout', logoutPost);
+authRouter.delete('/logout', logoutPost);
 
 export default authRouter;
