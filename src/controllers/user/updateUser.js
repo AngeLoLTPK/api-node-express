@@ -3,7 +3,7 @@ import user from '../../models/userModel.js'
 const updateUser = async (req, res) => {
     try {
         const userData = req.body;
-        const [result] = await user.updateByUser(userData.name, userData.email, userData.pass, userData.photo, userData.id)
+        const [result] = await user.updateByUser(userData)
 
         if(result.affectedRows === 1) {
             res.json({

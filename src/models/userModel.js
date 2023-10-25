@@ -13,8 +13,9 @@ const postByUser = async(name, email, pass, photo) => {
     return await pool.query("insert into users (name, email, pass, photo) values (?, ?, ?, ?);", [name, email, pass, photo]);
 };
 
-const updateByUser = async(name, email, photo, id) => {
-    return await pool.query("update users set name=?, email=?, photo=? where id = ?", [name, email, photo, id]);
+const updateByUser = async (user) => {
+    const {id, name, email, photo} = user
+    return await pool.query("UPDATE users SET name = ?, email = ?, photo = ? WHERE id = ?;", [name, email, photo, id])
 }
 
 const deleteByUser = async(id) => {
